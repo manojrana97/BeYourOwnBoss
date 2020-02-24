@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>850646093372-03e13pk8iip48pgc7jg3d6up1789uhnn.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.850646093372-03e13pk8iip48pgc7jg3d6up1789uhnn</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCOjrPsLeetg1-n2awZlvCrWNLJ6c9X5UY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>850646093372</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.byob.BYOB</string>
+	<key>PROJECT_ID</key>
+	<string>byob-2664f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>byob-2664f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:850646093372:ios:904c800eb2d859ba9bbd39</string>
+	<key>DATABASE_URL</key>
+	<string>https://byob-2664f.firebaseio.com</string>
+</dict>
+</plist>
