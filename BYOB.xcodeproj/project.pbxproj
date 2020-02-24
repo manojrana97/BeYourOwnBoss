@@ -36,6 +36,9 @@
 		1885A6C823FA775700406492 /* ProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885A6BA23FA775700406492 /* ProgressButton.swift */; };
 		1885A6CD23FA788D00406492 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1885A6CC23FA788D00406492 /* GoogleService-Info.plist */; };
 		1885A6E223FAA9A600406492 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885A6E123FAA9A600406492 /* User.swift */; };
+		18FA46DC24039766002AE90E /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA46D924039766002AE90E /* SkyFloatingLabelTextField.swift */; };
+		18FA46DD24039766002AE90E /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA46DA24039766002AE90E /* UITextField+fixCaretPosition.swift */; };
+		18FA46DE24039766002AE90E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA46DB24039766002AE90E /* SkyFloatingLabelTextFieldWithIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +72,9 @@
 		1885A6BA23FA775700406492 /* ProgressButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressButton.swift; sourceTree = "<group>"; };
 		1885A6CC23FA788D00406492 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1885A6E123FAA9A600406492 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		18FA46D924039766002AE90E /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
+		18FA46DA24039766002AE90E /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
+		18FA46DB24039766002AE90E /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
 		58E249503EE695F7FB9A81FA /* Pods_BYOB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BYOB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D29481CEC99C18DF8517222 /* Pods-BYOB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BYOB.release.xcconfig"; path = "Target Support Files/Pods-BYOB/Pods-BYOB.release.xcconfig"; sourceTree = "<group>"; };
 		E8576A38F31465FB55DB0D72 /* Pods-BYOB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BYOB.debug.xcconfig"; path = "Target Support Files/Pods-BYOB/Pods-BYOB.debug.xcconfig"; sourceTree = "<group>"; };
@@ -221,6 +227,7 @@
 		1885A6A623FA714D00406492 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				18FA46D5240395E5002AE90E /* TextField */,
 				18741E2823FEB036007B4696 /* Extensions */,
 				1885A6AE23FA775700406492 /* Generics */,
 				1885A6B723FA775700406492 /* Loader */,
@@ -258,6 +265,24 @@
 				1885A6E123FAA9A600406492 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		18FA46D5240395E5002AE90E /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				18FA46D824039766002AE90E /* SkyFloatingTextField */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		18FA46D824039766002AE90E /* SkyFloatingTextField */ = {
+			isa = PBXGroup;
+			children = (
+				18FA46D924039766002AE90E /* SkyFloatingLabelTextField.swift */,
+				18FA46DA24039766002AE90E /* UITextField+fixCaretPosition.swift */,
+				18FA46DB24039766002AE90E /* SkyFloatingLabelTextFieldWithIcon.swift */,
+			);
+			path = SkyFloatingTextField;
 			sourceTree = "<group>";
 		};
 		60E8F7816695ADBB8A1D26E5 /* Pods */ = {
@@ -406,11 +431,14 @@
 				1885A6C723FA775700406492 /* SwiftLoader.swift in Sources */,
 				1885A6C323FA775700406492 /* ClosurButton.swift in Sources */,
 				18741E2C23FEB14C007B4696 /* SignUpViewController.swift in Sources */,
+				18FA46DC24039766002AE90E /* SkyFloatingLabelTextField.swift in Sources */,
 				1885A68D23FA706D00406492 /* SceneDelegate.swift in Sources */,
 				18741E2A23FEB053007B4696 /* UIExtensions.swift in Sources */,
 				1885A6C523FA775700406492 /* CommonUtilities.swift in Sources */,
 				18741E1A23FE8B0C007B4696 /* LandingScreenViewController.swift in Sources */,
+				18FA46DE24039766002AE90E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				1885A6BE23FA775700406492 /* Constants.swift in Sources */,
+				18FA46DD24039766002AE90E /* UITextField+fixCaretPosition.swift in Sources */,
 				1885A6BF23FA775700406492 /* UserDefaultManager.swift in Sources */,
 				1885A6C623FA775700406492 /* CustomInfinteIndicator.swift in Sources */,
 				1885A6C223FA775700406492 /* MKRImagePicker.swift in Sources */,
