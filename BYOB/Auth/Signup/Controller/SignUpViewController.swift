@@ -7,24 +7,46 @@
 //
 
 import UIKit
-
+import Photos
 class SignUpViewController: UIViewController {
-
+    //MARK:- IBOutlets
+    @IBOutlet weak private var profileImageView:UIImageView!
+    @IBOutlet weak var frontView: UIView!
+    
+    //MARK:- Variables
+    private lazy var imagePicker: MKRImagePicker = {
+        let imagePicker = MKRImagePicker()
+        imagePicker.sourceType = [.camera,.photoLibrary]
+        imagePicker.imageDelegate = self
+        return imagePicker
+    }()
+    //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLayoutSubviews() {
+        self.frontView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
-    */
+    
+    //MARK:- IBActions
+    @IBAction func addImageButtonTapped(_ sender: UIButton) {
+        
+    }
 
+}
+
+
+//MARK:- ImagePicker Delegate
+extension SignUpViewController:MKRImagePickerDelegate{
+    func imageSelectionSuccessful(selectedImage: UIImage) {
+        profileImageView.image = selectedImage
+    }
+    
+    func imageSelectionCancelled() {
+    }
+    
+    
 }

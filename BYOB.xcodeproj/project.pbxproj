@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		09F4AD70AEF584698837F088 /* Pods_BYOB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E249503EE695F7FB9A81FA /* Pods_BYOB.framework */; };
+		18363914240D099A00854C94 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18363913240D099A00854C94 /* Home.storyboard */; };
+		1836391C240D1B9300854C94 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1836391B240D1B9300854C94 /* Settings.storyboard */; };
+		1836391E240D1BAA00854C94 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1836391D240D1BAA00854C94 /* Payment.storyboard */; };
+		18363923240D1D0000854C94 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18363922240D1D0000854C94 /* Profile.storyboard */; };
 		18741E1623FE739E007B4696 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18741E1523FE739E007B4696 /* Login.storyboard */; };
 		18741E1A23FE8B0C007B4696 /* LandingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18741E1923FE8B0C007B4696 /* LandingScreenViewController.swift */; };
 		18741E2223FE8D65007B4696 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18741E1C23FE8D65007B4696 /* Montserrat-Bold.otf */; };
@@ -42,6 +46,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18363913240D099A00854C94 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		1836391B240D1B9300854C94 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		1836391D240D1BAA00854C94 /* Payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
+		18363922240D1D0000854C94 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		18741E1523FE739E007B4696 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		18741E1923FE8B0C007B4696 /* LandingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewController.swift; sourceTree = "<group>"; };
 		18741E1C23FE8D65007B4696 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
@@ -92,6 +100,102 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1836390F240D093C00854C94 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				18363911240D095100854C94 /* Controller */,
+				18363910240D094700854C94 /* Storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		18363910240D094700854C94 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				18363913240D099A00854C94 /* Home.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		18363911240D095100854C94 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		18363915240D183900854C94 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1836391A240D188E00854C94 /* Controller */,
+				18363919240D188200854C94 /* Storyboard */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		18363916240D185E00854C94 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				18363918240D187700854C94 /* Controller */,
+				18363917240D186E00854C94 /* Storyboard */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		18363917240D186E00854C94 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1836391D240D1BAA00854C94 /* Payment.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		18363918240D187700854C94 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		18363919240D188200854C94 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1836391B240D1B9300854C94 /* Settings.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		1836391A240D188E00854C94 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1836391F240D1CD800854C94 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				18363921240D1CEE00854C94 /* Controller */,
+				18363920240D1CE400854C94 /* Storyboard */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		18363920240D1CE400854C94 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				18363922240D1D0000854C94 /* Profile.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		18363921240D1CEE00854C94 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		18741E1423FE7387007B4696 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +262,10 @@
 		1885A68923FA706D00406492 /* BYOB */ = {
 			isa = PBXGroup;
 			children = (
+				1836391F240D1CD800854C94 /* Profile */,
+				18363916240D185E00854C94 /* Payment */,
+				18363915240D183900854C94 /* Settings */,
+				1836390F240D093C00854C94 /* Home */,
 				18741E1B23FE8D65007B4696 /* Fonts */,
 				18741E1823FE8A09007B4696 /* Landing Screen */,
 				1885A6E023FAA99900406492 /* Models */,
@@ -363,8 +471,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				18741E2523FE8D65007B4696 /* Montserrat-Medium.otf in Resources */,
+				1836391E240D1BAA00854C94 /* Payment.storyboard in Resources */,
 				1885A69723FA707100406492 /* LaunchScreen.storyboard in Resources */,
 				1885A69423FA707100406492 /* Assets.xcassets in Resources */,
+				18363914240D099A00854C94 /* Home.storyboard in Resources */,
 				18741E1623FE739E007B4696 /* Login.storyboard in Resources */,
 				18741E2723FE8D65007B4696 /* Montserrat-SemiBold.otf in Resources */,
 				1885A6A523FA710000406492 /* Signup.storyboard in Resources */,
@@ -372,6 +482,8 @@
 				1885A6CD23FA788D00406492 /* GoogleService-Info.plist in Resources */,
 				18741E2223FE8D65007B4696 /* Montserrat-Bold.otf in Resources */,
 				18741E2323FE8D65007B4696 /* Montserrat-Light.otf in Resources */,
+				18363923240D1D0000854C94 /* Profile.storyboard in Resources */,
+				1836391C240D1B9300854C94 /* Settings.storyboard in Resources */,
 				18741E2623FE8D65007B4696 /* Montserrat-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -590,7 +702,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UA795VM9ZH;
+				DEVELOPMENT_TEAM = BN23SZEKV6;
 				INFOPLIST_FILE = BYOB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -609,7 +721,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UA795VM9ZH;
+				DEVELOPMENT_TEAM = BN23SZEKV6;
 				INFOPLIST_FILE = BYOB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
