@@ -249,7 +249,7 @@ class CommonUtilities {
         
         let isShowPassword = Bool(truncating: button.tag as NSNumber)
         textField.isSecureTextEntry = isShowPassword
-        let eyeIcon = isShowPassword ? UIImage(named: "eyeGrey") : UIImage(named: "eyeBlue")
+        let eyeIcon = isShowPassword ? UIImage(named: "system.eye") : UIImage(named: "system.eyeslash")
         button.setImage(eyeIcon, for: .normal)
         button.tag = isShowPassword ? 0 : 1
     }

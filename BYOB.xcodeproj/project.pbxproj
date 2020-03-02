@@ -12,6 +12,7 @@
 		1836391C240D1B9300854C94 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1836391B240D1B9300854C94 /* Settings.storyboard */; };
 		1836391E240D1BAA00854C94 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1836391D240D1BAA00854C94 /* Payment.storyboard */; };
 		18363923240D1D0000854C94 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18363922240D1D0000854C94 /* Profile.storyboard */; };
+		18363927240D48CD00854C94 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18363926240D48CD00854C94 /* LoginViewController.swift */; };
 		18741E1623FE739E007B4696 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18741E1523FE739E007B4696 /* Login.storyboard */; };
 		18741E1A23FE8B0C007B4696 /* LandingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18741E1923FE8B0C007B4696 /* LandingScreenViewController.swift */; };
 		18741E2223FE8D65007B4696 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18741E1C23FE8D65007B4696 /* Montserrat-Bold.otf */; };
@@ -50,6 +51,7 @@
 		1836391B240D1B9300854C94 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		1836391D240D1BAA00854C94 /* Payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
 		18363922240D1D0000854C94 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		18363926240D48CD00854C94 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		18741E1523FE739E007B4696 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		18741E1923FE8B0C007B4696 /* LandingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewController.swift; sourceTree = "<group>"; };
 		18741E1C23FE8D65007B4696 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		18741E1723FE73A3007B4696 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				18363926240D48CD00854C94 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18363927240D48CD00854C94 /* LoginViewController.swift in Sources */,
 				1885A6C823FA775700406492 /* ProgressButton.swift in Sources */,
 				1885A68F23FA706D00406492 /* ViewController.swift in Sources */,
 				1885A68B23FA706D00406492 /* AppDelegate.swift in Sources */,
