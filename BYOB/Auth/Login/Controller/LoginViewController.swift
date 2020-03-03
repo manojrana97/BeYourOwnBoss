@@ -9,22 +9,31 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
+    //MARK:- IBOutlets
+    @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var frontView: UIView!
+    
+    //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLayoutSubviews() {
+        self.frontView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
-    */
-
+    
+    //MARK:- IBActions
+    @IBAction func passwordShowHideTapped(_ sender: UIButton) {
+        CommonUtilities.showHidePasswordCharacters(textField: passwordTextField, button: sender)
+    }
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func signupButtonTapped(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }

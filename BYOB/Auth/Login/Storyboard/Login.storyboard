@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bxa-HZ-Hig">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hIq-oA-Q9z">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -23,7 +23,7 @@
             <objects>
                 <viewController id="Bxa-HZ-Hig" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WQP-mT-ONL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="AfY-rP-iAD"/>
@@ -33,10 +33,10 @@
             </objects>
             <point key="canvasLocation" x="74" y="72"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="28U-1S-hpC">
             <objects>
-                <viewController id="hIq-oA-Q9z" customClass="SignUpViewController" customModule="BYOB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hIq-oA-Q9z" customClass="LoginViewController" customModule="BYOB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tuq-DH-06a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,6 +72,9 @@
                                                 <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="emailTextField:" destination="CyV-7W-wUo" eventType="editingDidEnd" id="CEe-6Z-ifP"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iia-JP-xlN">
                                         <rect key="frame" x="20" y="249" width="374" height="50"/>
@@ -88,6 +91,9 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginButtonTapped:" destination="hIq-oA-Q9z" eventType="touchUpInside" id="4e4-7s-glX"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pal-5Y-VBF">
                                         <rect key="frame" x="20" y="309" width="201" height="20"/>
@@ -105,13 +111,13 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="VYj-VN-Bf8" kind="show" id="CIf-7j-x3n"/>
+                                            <action selector="signupButtonTapped:" destination="hIq-oA-Q9z" eventType="touchUpInside" id="F88-OV-xfZ"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S7R-kf-dx2" customClass="SkyFloatingLabelTextField" customModule="BYOB" customModuleProvider="target">
                                         <rect key="frame" x="20" y="169" width="374" height="50"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
@@ -126,7 +132,10 @@
                                             <constraint firstAttribute="height" constant="30" id="Hh3-hN-FUX"/>
                                         </constraints>
                                         <color key="tintColor" red="0.12549019610000001" green="0.2274509804" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" image="eye.slash" catalog="system"/>
+                                        <state key="normal" image="eye" catalog="system"/>
+                                        <connections>
+                                            <action selector="passwordShowHideTapped:" destination="hIq-oA-Q9z" eventType="touchUpInside" id="lgH-pc-G1s"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCe-Gc-L5F">
                                         <rect key="frame" x="257" y="224" width="137" height="20"/>
@@ -137,6 +146,9 @@
                                         <state key="normal" title="Forgot Password?">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="Bxa-HZ-Hig" kind="showDetail" id="ipk-OL-vrU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -189,12 +201,15 @@
                         <viewLayoutGuide key="safeArea" id="3qw-Zw-WWJ"/>
                     </view>
                     <connections>
-                        <outlet property="frontView" destination="URe-ej-Rr4" id="84r-R8-rIJ"/>
+                        <outlet property="emailTextField" destination="Bhb-gd-3L9" id="ug3-iy-43G"/>
+                        <outlet property="frontView" destination="URe-ej-Rr4" id="CB8-2e-jcL"/>
+                        <outlet property="passwordTextField" destination="S7R-kf-dx2" id="SCE-eQ-tNQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8i-oD-9Ws" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="CyV-7W-wUo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1085.5072463768117" y="38.315217391304351"/>
+            <point key="canvasLocation" x="-730" y="28"/>
         </scene>
         <!--Signup-->
         <scene sceneID="4uU-1q-gh3">
@@ -204,11 +219,11 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gRa-rS-5t0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1773" y="232"/>
+            <point key="canvasLocation" x="-730" y="417"/>
         </scene>
     </scenes>
     <resources>
         <image name="background" width="900" height="1600"/>
-        <image name="eye.slash" catalog="system" width="64" height="42"/>
+        <image name="eye" catalog="system" width="64" height="40"/>
     </resources>
 </document>

@@ -10,7 +10,10 @@ import UIKit
 import Photos
 class SignUpViewController: UIViewController {
     //MARK:- IBOutlets
-    @IBOutlet weak private var profileImageView:UIImageView!
+    @IBOutlet weak var nameTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var mobileNumberTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var frontView: UIView!
     
     //MARK:- Variables
@@ -32,8 +35,8 @@ class SignUpViewController: UIViewController {
     }
     
     //MARK:- IBActions
-    @IBAction func addImageButtonTapped(_ sender: UIButton) {
-        
+    @IBAction func passwordShowHideTapped(_ sender: UIButton) {
+        CommonUtilities.showHidePasswordCharacters(textField: passwordTextField, button: sender)
     }
 
 }
@@ -42,7 +45,6 @@ class SignUpViewController: UIViewController {
 //MARK:- ImagePicker Delegate
 extension SignUpViewController:MKRImagePickerDelegate{
     func imageSelectionSuccessful(selectedImage: UIImage) {
-        profileImageView.image = selectedImage
     }
     
     func imageSelectionCancelled() {
