@@ -14,5 +14,8 @@ target 'BYOB' do
   pod 'Kingfisher'
   pod 'TransitionButton', '~> 0.5.2'
   pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
 
 end

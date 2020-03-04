@@ -16,28 +16,8 @@ import MapKit
 
 class CommonUtilities {
     
-    
-//    class func setupSearchBar(searchBar:UISearchBar) {
-//          if let textField = searchBar.value(forKey: "searchField") as? UITextField {
-//              textField.borderStyle = .none
-//              textField.backgroundColor = .white
-//              textField.layer.cornerRadius = 18
-//              textField.layer.masksToBounds = true
-//              textField.borderWidth = 0.8
-//              textField.borderColor = UIColor.darkGray //#a5aaad
-//              textField.leftView?.contentMode = .scaleAspectFit
-//              var frame = textField.leftView?.frame
-//              frame?.size.width += 10
-//              textField.leftView?.frame = frame!
-//              textField.clearButtonMode = .never
-//              textField.textColor = UIColor.themeBlueColor() //#475468
-//              textField.clearButtonMode = .whileEditing
-//              searchBar.returnKeyType = .default
-//          }
-//      }
-    
     class func getUserFromUserDefaults() -> User? {
-        if let user = UserDefaultManager.sharedManager.objectForKey(key:Constants.UserDefaultsKeys.user) {
+        if let user = UserDefaultManager.shared.objectForKey(key:Constants.UserDefaultsKeys.user) {
             return NSKeyedUnarchiver.unarchiveObject(with: user as! Data) as? User
         }
         return nil

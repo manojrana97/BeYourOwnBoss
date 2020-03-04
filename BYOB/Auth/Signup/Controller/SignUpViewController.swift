@@ -7,7 +7,9 @@
 //
 
 import UIKit
-import Photos
+import FirebaseAuth
+import Firebase
+import FirebaseFirestore
 class SignUpViewController: UIViewController {
     //MARK:- IBOutlets
     @IBOutlet weak var nameTextField: SkyFloatingLabelTextField!
@@ -16,13 +18,9 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var frontView: UIView!
     
+    
     //MARK:- Variables
-    private lazy var imagePicker: MKRImagePicker = {
-        let imagePicker = MKRImagePicker()
-        imagePicker.sourceType = [.camera,.photoLibrary]
-        imagePicker.imageDelegate = self
-        return imagePicker
-    }()
+    let db = Firestore.firestore()
     //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,17 +36,27 @@ class SignUpViewController: UIViewController {
     @IBAction func passwordShowHideTapped(_ sender: UIButton) {
         CommonUtilities.showHidePasswordCharacters(textField: passwordTextField, button: sender)
     }
+    
+    @IBAction func signUpButtonTapped(_ sender: UIButton) {
+        if InputValidations.checkSignupValidations(name: nameTextField.text ?? "", email: emailTextField.text ?? "", mobileNumber: mobileNumberTextField.text ?? "", password: passwordTextField.text ?? "", presentationController: self) {
+            
+            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+                
+                if user != nil{
+                       let userId = Auth.auth().currentUser?.uid
+                       User.shared?.uid = userId!
+                       User.shared?.name = self.nameTextField.text!
+                       User.shared?.mobile = self.mobileNumberTextField.text!
+                       User.shared?.email = self.emailTextField.text!
+                    self.db.collection("users").document(userId!).setData(["name":"\(User.shared?.name!)","mobile":"\(User.shared?.mobile!)","email":"\(User.shared?.email!)"], completion: { (error) in
+                        if let _error = error{
+                            AlertUtility.showAlert(self, title: Constants.AlertTitle.error, message: _error.localizedDescription)
+                        }
+                    })
+                }
+            }
+        }
+    }
 
 }
 
-
-//MARK:- ImagePicker Delegate
-extension SignUpViewController:MKRImagePickerDelegate{
-    func imageSelectionSuccessful(selectedImage: UIImage) {
-    }
-    
-    func imageSelectionCancelled() {
-    }
-    
-    
-}

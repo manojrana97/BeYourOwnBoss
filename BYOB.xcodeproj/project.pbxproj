@@ -13,8 +13,9 @@
 		1836391E240D1BAA00854C94 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1836391D240D1BAA00854C94 /* Payment.storyboard */; };
 		18363923240D1D0000854C94 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18363922240D1D0000854C94 /* Profile.storyboard */; };
 		18363927240D48CD00854C94 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18363926240D48CD00854C94 /* LoginViewController.swift */; };
+		186CC7BB240F782B00126016 /* GuideScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186CC7BA240F782B00126016 /* GuideScreen.storyboard */; };
+		186CC7BD240F784200126016 /* GuideScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CC7BC240F784200126016 /* GuideScreenViewController.swift */; };
 		18741E1623FE739E007B4696 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18741E1523FE739E007B4696 /* Login.storyboard */; };
-		18741E1A23FE8B0C007B4696 /* LandingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18741E1923FE8B0C007B4696 /* LandingScreenViewController.swift */; };
 		18741E2223FE8D65007B4696 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18741E1C23FE8D65007B4696 /* Montserrat-Bold.otf */; };
 		18741E2323FE8D65007B4696 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18741E1D23FE8D65007B4696 /* Montserrat-Light.otf */; };
 		18741E2523FE8D65007B4696 /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18741E1F23FE8D65007B4696 /* Montserrat-Medium.otf */; };
@@ -25,7 +26,6 @@
 		1885A68B23FA706D00406492 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885A68A23FA706D00406492 /* AppDelegate.swift */; };
 		1885A68D23FA706D00406492 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885A68C23FA706D00406492 /* SceneDelegate.swift */; };
 		1885A68F23FA706D00406492 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885A68E23FA706D00406492 /* ViewController.swift */; };
-		1885A69223FA706D00406492 /* Landing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1885A69023FA706D00406492 /* Landing.storyboard */; };
 		1885A69423FA707100406492 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1885A69323FA707100406492 /* Assets.xcassets */; };
 		1885A69723FA707100406492 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1885A69523FA707100406492 /* LaunchScreen.storyboard */; };
 		1885A6A523FA710000406492 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1885A6A423FA710000406492 /* Signup.storyboard */; };
@@ -41,6 +41,8 @@
 		1885A6C823FA775700406492 /* ProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885A6BA23FA775700406492 /* ProgressButton.swift */; };
 		1885A6CD23FA788D00406492 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1885A6CC23FA788D00406492 /* GoogleService-Info.plist */; };
 		1885A6E223FAA9A600406492 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885A6E123FAA9A600406492 /* User.swift */; };
+		188DB737240E78B9008905A1 /* RootScreenUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DB736240E78B9008905A1 /* RootScreenUtility.swift */; };
+		188DB73A240E86F4008905A1 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DB739240E86F4008905A1 /* Identifiers.swift */; };
 		18FA46DC24039766002AE90E /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA46D924039766002AE90E /* SkyFloatingLabelTextField.swift */; };
 		18FA46DD24039766002AE90E /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA46DA24039766002AE90E /* UITextField+fixCaretPosition.swift */; };
 		18FA46DE24039766002AE90E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA46DB24039766002AE90E /* SkyFloatingLabelTextFieldWithIcon.swift */; };
@@ -52,8 +54,9 @@
 		1836391D240D1BAA00854C94 /* Payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
 		18363922240D1D0000854C94 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		18363926240D48CD00854C94 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		186CC7BA240F782B00126016 /* GuideScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GuideScreen.storyboard; sourceTree = "<group>"; };
+		186CC7BC240F784200126016 /* GuideScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideScreenViewController.swift; sourceTree = "<group>"; };
 		18741E1523FE739E007B4696 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		18741E1923FE8B0C007B4696 /* LandingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewController.swift; sourceTree = "<group>"; };
 		18741E1C23FE8D65007B4696 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
 		18741E1D23FE8D65007B4696 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
 		18741E1F23FE8D65007B4696 /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
@@ -65,7 +68,6 @@
 		1885A68A23FA706D00406492 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1885A68C23FA706D00406492 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1885A68E23FA706D00406492 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1885A69123FA706D00406492 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Landing.storyboard; sourceTree = "<group>"; };
 		1885A69323FA707100406492 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1885A69623FA707100406492 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1885A69823FA707100406492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +84,8 @@
 		1885A6BA23FA775700406492 /* ProgressButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressButton.swift; sourceTree = "<group>"; };
 		1885A6CC23FA788D00406492 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1885A6E123FAA9A600406492 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		188DB736240E78B9008905A1 /* RootScreenUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreenUtility.swift; sourceTree = "<group>"; };
+		188DB739240E86F4008905A1 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		18FA46D924039766002AE90E /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
 		18FA46DA24039766002AE90E /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		18FA46DB24039766002AE90E /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
@@ -198,6 +202,31 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		186CC7B7240F77FD00126016 /* GuideScreen */ = {
+			isa = PBXGroup;
+			children = (
+				186CC7B9240F781300126016 /* Controller */,
+				186CC7B8240F780700126016 /* StoryBoard */,
+			);
+			path = GuideScreen;
+			sourceTree = "<group>";
+		};
+		186CC7B8240F780700126016 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				186CC7BA240F782B00126016 /* GuideScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		186CC7B9240F781300126016 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				186CC7BC240F784200126016 /* GuideScreenViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		18741E1423FE7387007B4696 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,15 +241,6 @@
 				18363926240D48CD00854C94 /* LoginViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		18741E1823FE8A09007B4696 /* Landing Screen */ = {
-			isa = PBXGroup;
-			children = (
-				1885A69023FA706D00406492 /* Landing.storyboard */,
-				18741E1923FE8B0C007B4696 /* LandingScreenViewController.swift */,
-			);
-			path = "Landing Screen";
 			sourceTree = "<group>";
 		};
 		18741E1B23FE8D65007B4696 /* Fonts */ = {
@@ -265,12 +285,12 @@
 		1885A68923FA706D00406492 /* BYOB */ = {
 			isa = PBXGroup;
 			children = (
+				186CC7B7240F77FD00126016 /* GuideScreen */,
 				1836391F240D1CD800854C94 /* Profile */,
 				18363916240D185E00854C94 /* Payment */,
 				18363915240D183900854C94 /* Settings */,
 				1836390F240D093C00854C94 /* Home */,
 				18741E1B23FE8D65007B4696 /* Fonts */,
-				18741E1823FE8A09007B4696 /* Landing Screen */,
 				1885A6E023FAA99900406492 /* Models */,
 				1885A69E23FA709700406492 /* Auth */,
 				1885A68A23FA706D00406492 /* AppDelegate.swift */,
@@ -349,13 +369,14 @@
 		1885A6AE23FA775700406492 /* Generics */ = {
 			isa = PBXGroup;
 			children = (
-				1885A6AF23FA775700406492 /* Constants.swift */,
+				188DB738240E86DC008905A1 /* Constants */,
 				1885A6B023FA775700406492 /* UserDefaultManager.swift */,
 				1885A6B123FA775700406492 /* Logger.swift */,
 				1885A6B323FA775700406492 /* MKRImagePicker.swift */,
 				1885A6B423FA775700406492 /* ClosurButton.swift */,
 				1885A6B523FA775700406492 /* InputValidations.swift */,
 				1885A6B623FA775700406492 /* CommonUtilities.swift */,
+				188DB736240E78B9008905A1 /* RootScreenUtility.swift */,
 			);
 			path = Generics;
 			sourceTree = "<group>";
@@ -376,6 +397,15 @@
 				1885A6E123FAA9A600406492 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		188DB738240E86DC008905A1 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				1885A6AF23FA775700406492 /* Constants.swift */,
+				188DB739240E86F4008905A1 /* Identifiers.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		18FA46D5240395E5002AE90E /* TextField */ = {
@@ -481,9 +511,9 @@
 				18741E1623FE739E007B4696 /* Login.storyboard in Resources */,
 				18741E2723FE8D65007B4696 /* Montserrat-SemiBold.otf in Resources */,
 				1885A6A523FA710000406492 /* Signup.storyboard in Resources */,
-				1885A69223FA706D00406492 /* Landing.storyboard in Resources */,
 				1885A6CD23FA788D00406492 /* GoogleService-Info.plist in Resources */,
 				18741E2223FE8D65007B4696 /* Montserrat-Bold.otf in Resources */,
+				186CC7BB240F782B00126016 /* GuideScreen.storyboard in Resources */,
 				18741E2323FE8D65007B4696 /* Montserrat-Light.otf in Resources */,
 				18363923240D1D0000854C94 /* Profile.storyboard in Resources */,
 				1836391C240D1B9300854C94 /* Settings.storyboard in Resources */,
@@ -542,6 +572,7 @@
 			files = (
 				18363927240D48CD00854C94 /* LoginViewController.swift in Sources */,
 				1885A6C823FA775700406492 /* ProgressButton.swift in Sources */,
+				186CC7BD240F784200126016 /* GuideScreenViewController.swift in Sources */,
 				1885A68F23FA706D00406492 /* ViewController.swift in Sources */,
 				1885A68B23FA706D00406492 /* AppDelegate.swift in Sources */,
 				1885A6C723FA775700406492 /* SwiftLoader.swift in Sources */,
@@ -551,13 +582,14 @@
 				1885A68D23FA706D00406492 /* SceneDelegate.swift in Sources */,
 				18741E2A23FEB053007B4696 /* UIExtensions.swift in Sources */,
 				1885A6C523FA775700406492 /* CommonUtilities.swift in Sources */,
-				18741E1A23FE8B0C007B4696 /* LandingScreenViewController.swift in Sources */,
 				18FA46DE24039766002AE90E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				1885A6BE23FA775700406492 /* Constants.swift in Sources */,
 				18FA46DD24039766002AE90E /* UITextField+fixCaretPosition.swift in Sources */,
 				1885A6BF23FA775700406492 /* UserDefaultManager.swift in Sources */,
+				188DB737240E78B9008905A1 /* RootScreenUtility.swift in Sources */,
 				1885A6C623FA775700406492 /* CustomInfinteIndicator.swift in Sources */,
 				1885A6C223FA775700406492 /* MKRImagePicker.swift in Sources */,
+				188DB73A240E86F4008905A1 /* Identifiers.swift in Sources */,
 				1885A6E223FAA9A600406492 /* User.swift in Sources */,
 				1885A6C023FA775700406492 /* Logger.swift in Sources */,
 				1885A6C423FA775700406492 /* InputValidations.swift in Sources */,
@@ -567,14 +599,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1885A69023FA706D00406492 /* Landing.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1885A69123FA706D00406492 /* Base */,
-			);
-			name = Landing.storyboard;
-			sourceTree = "<group>";
-		};
 		1885A69523FA707100406492 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -7,43 +7,53 @@
 //
 
 import Foundation
-import ObjectMapper
-import SwiftyJSON
-class User: NSObject {
+import UIKit
+class User: NSObject,DataModel, NSCoding {
+    static var shared: User?
+    var name         : String?
+    var email        : String?
+    var mobile       : String?
+    var uid          : String?
+    var userImage    : String?
     
-    override init() {}
-    required init?(map: Map) {}
-    var name           : String?
-    var email          : String?
-    var phone          : String?
-    var token          : String?
-    var userId         : Int?
-    var previousLeads  : String?
-    var upcomingLeads  : String?
-    var todayLeads     : String?
-    var totalLeads     : String?
-    var firstName      : String?
-    var lastName       : String?
-    var userImage      : String?
-    var firstTimeLogin : String?
-    var rewards        : Int?
+    required init(coder decoder: NSCoder) {
+        self.uid = decoder.decodeObject(forKey: "uid") as? String ?? ""
+        self.name = decoder.decodeObject(forKey: "name") as? String ?? ""
+        self.email = decoder.decodeObject(forKey: "email") as? String ?? ""
+        self.mobile = decoder.decodeObject(forKey: "mobile") as? String ?? ""
+    }
     
-    func mapping(map: Map) {
-        name            <- map["name"]
-        email           <- map["email"]
-        phone           <- map["phone"]
-        token           <- map["token"]
-        userId          <- map["user_id"]
-        previousLeads   <- map["previous_leads"]
-        upcomingLeads   <- map["upcoming_leads"]
-        todayLeads      <- map["today_leads"]
-        totalLeads      <- map["total_leads"]
-        firstName       <- map["first_name"]
-        lastName        <- map["last_name"]
-        userImage       <- map["image"]
-        firstTimeLogin  <- map["first_time_login"]
-        rewards         <- map["rewards"]
+    func encode(with coder: NSCoder) {
+        coder.encode(uid, forKey: "uid")
+        coder.encode(name, forKey: "name")
+        coder.encode(email, forKey: "email")
+        coder.encode(mobile, forKey: "mobile")
+    }
+    
+    func logout(view: UIView) {
+        UserDefaultManager.shared.resetUser()
+        RootScreenUtility.setRootScreen(window: RootScreenUtility.window(for: view))
     }
     
 }
 
+
+protocol DataModel{}
+extension String:DataModel {}
+extension Int:DataModel {}
+extension Array:DataModel{}
+extension Dictionary:DataModel{}
+
+extension DataModel
+{
+    var toString:String?{
+        return self as? String
+    }
+    var toArray:Array<Any>?{
+        return self as? Array
+    }
+    
+    var toDictionary:Dictionary<String, Any>?{
+        return self as? Dictionary<String, Any>
+    }
+}
