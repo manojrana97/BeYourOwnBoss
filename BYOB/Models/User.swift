@@ -16,6 +16,8 @@ class User: NSObject,DataModel, NSCoding {
     var uid          : String?
     var userImage    : String?
     
+    override init() {}
+    
     required init(coder decoder: NSCoder) {
         self.uid = decoder.decodeObject(forKey: "uid") as? String ?? ""
         self.name = decoder.decodeObject(forKey: "name") as? String ?? ""

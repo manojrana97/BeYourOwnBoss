@@ -147,16 +147,12 @@ class Constants: NSObject {
     struct ValidationMessages {
         static let noInternetConnection = "Error! Connection Lost while Constructing this Screen"
         static let enterPhoneNumber = "Please enter the phone number"
-        static let enterFirstName = "Please enter the first name"
-        static let enterLastName = "Please enter the last name"
+        static let enterName = "Please enter the name"
         static let enterEmail = "Please enter the email address"
         static let enterPassword = "Please enter password"
         static let enterDateTime = "Please select a date & time"
         static let enterCategory = "Please choose a category"
-        static let enterCompanyName = "Please enter Company name"
-        static let enterRera = "Please enter RERA Number"
         static let enterValidEmail = "Please enter a valid email address"
-        static let enterValidUsername = "Please enter a valid username"
         static let passwordNotMatched = "Passwords doesn't matched"
         static let enterValidPassword = "Please enter a valid password"
         static let enterValidPhone = "Please enter a valid phone number"
@@ -168,10 +164,7 @@ class Constants: NSObject {
         static let loginFieldsEmpty = "Please enter correct\n Email/Password"
         static let logoutConfirmation = "Are you sure you want to logout?"
         static let profileUpdated = "Profile Updated Successfully"
-        static let leadCreateSuccess = "Lead Created Successfully"
         static let saveChanges = "Do you want to save changes?"
-        static let shareMessage = "reward points, you can check in profile section."
-        static let paymentFailed = "Payment Failed Kindly use another payment option or try after sometime"
     }
     
     struct ValidationRules {

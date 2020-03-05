@@ -38,7 +38,7 @@ class InputValidations{
     
     class func isNameValid(name:String,presentationController:UIViewController)-> Bool{
         if name == ""{
-            AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterFirstName)
+            AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterName)
             return false
         }
         return true
