@@ -8,7 +8,17 @@
 
 import Foundation
 import UIKit
-class User: NSObject,DataModel, NSCoding {
+import ObjectMapper
+class User: NSObject,DataModel, NSCoding, Mappable {
+    required init?(map: Map) {}
+    
+    func mapping(map: Map) {
+        uid        <- map["id"]
+        name       <- map["name"]
+        email      <- map["email"]
+        mobile     <- map["mobile"]
+    }
+    
     static var shared: User?
     var name         : String?
     var email        : String?

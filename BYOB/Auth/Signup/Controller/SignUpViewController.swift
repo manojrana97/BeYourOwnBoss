@@ -37,27 +37,36 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
         if InputValidations.checkSignupValidations(name: nameTextField.text ?? "", email: emailTextField.text ?? "", mobileNumber: mobileNumberTextField.text ?? "", password: passwordTextField.text ?? "", presentationController: self) {
+            signupWebservice()
+        }
+    }
+    
+    private func signupWebservice(){
+        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { [weak self] (user, error) in
             
-            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-                
-                if user != nil{
-                       let userId = Auth.auth().currentUser?.uid
-                       User.shared?.uid = userId!
-                       User.shared?.name = self.nameTextField.text!
-                       User.shared?.mobile = self.mobileNumberTextField.text!
-                       User.shared?.email = self.emailTextField.text!
-                    self.db.collection("users").document(userId!).setData(["name":self.nameTextField.text!,"mobile":self.mobileNumberTextField.text!], completion: { (error) in
-                        if let _error = error{
-                            AlertUtility.showAlert(self, title: Constants.AlertTitle.error, message: _error.localizedDescription)
-                        }else{
-                            UserDefaultManager.shared.saveUser(User.shared ?? User())
-                            RootScreenUtility.setRootScreen(window: RootScreenUtility.window(for: self.view))
-                        }
-                    })
-                }
+            if user != nil{
+                let userId = Auth.auth().currentUser?.uid
+                User.shared?.uid = userId!
+                User.shared?.name = self?.nameTextField.text!
+                User.shared?.mobile = self?.mobileNumberTextField.text!
+                User.shared?.email = self?.emailTextField.text!
+                self?.setNewUserDataBase(userId: userId!)
             }
         }
     }
-
+    
+    private func setNewUserDataBase(userId:String){
+        self.db.collection("users").document(userId).setData(["name":self.nameTextField.text!,"mobile":self.mobileNumberTextField.text!], completion: { (error) in
+            if let _error = error{
+                AlertUtility.showAlert(self, title: Constants.AlertTitle.error, message: _error.localizedDescription)
+            }else{
+                UserDefaultManager.shared.saveUser(User.shared ?? User())
+                RootScreenUtility.setRootScreen(window: RootScreenUtility.window(for: self.view))
+            }
+        })
+        
+    }
+    
+    
 }
 
