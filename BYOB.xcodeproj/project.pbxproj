@@ -13,6 +13,12 @@
 		1836391E240D1BAA00854C94 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1836391D240D1BAA00854C94 /* Payment.storyboard */; };
 		18363923240D1D0000854C94 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18363922240D1D0000854C94 /* Profile.storyboard */; };
 		18363927240D48CD00854C94 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18363926240D48CD00854C94 /* LoginViewController.swift */; };
+		186A9B2624164D3800B51010 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186A9B2524164D3800B51010 /* Expenses.swift */; };
+		186A9B282416572500B51010 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186A9B272416572500B51010 /* HomeViewController.swift */; };
+		186A9B2A2416573300B51010 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186A9B292416573300B51010 /* GraphViewController.swift */; };
+		186A9B2C2416574B00B51010 /* CategorizedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186A9B2B2416574B00B51010 /* CategorizedViewController.swift */; };
+		186A9B30241657FA00B51010 /* CategorizedExpenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186A9B2E241657FA00B51010 /* CategorizedExpenceCell.swift */; };
+		186A9B31241657FA00B51010 /* CategorizedExpenceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186A9B2F241657FA00B51010 /* CategorizedExpenceCell.xib */; };
 		186CC7BB240F782B00126016 /* GuideScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186CC7BA240F782B00126016 /* GuideScreen.storyboard */; };
 		186CC7BD240F784200126016 /* GuideScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CC7BC240F784200126016 /* GuideScreenViewController.swift */; };
 		18741E1623FE739E007B4696 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18741E1523FE739E007B4696 /* Login.storyboard */; };
@@ -54,6 +60,12 @@
 		1836391D240D1BAA00854C94 /* Payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
 		18363922240D1D0000854C94 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		18363926240D48CD00854C94 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		186A9B2524164D3800B51010 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
+		186A9B272416572500B51010 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		186A9B292416573300B51010 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		186A9B2B2416574B00B51010 /* CategorizedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorizedViewController.swift; sourceTree = "<group>"; };
+		186A9B2E241657FA00B51010 /* CategorizedExpenceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorizedExpenceCell.swift; sourceTree = "<group>"; };
+		186A9B2F241657FA00B51010 /* CategorizedExpenceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorizedExpenceCell.xib; sourceTree = "<group>"; };
 		186CC7BA240F782B00126016 /* GuideScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GuideScreen.storyboard; sourceTree = "<group>"; };
 		186CC7BC240F784200126016 /* GuideScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideScreenViewController.swift; sourceTree = "<group>"; };
 		18741E1523FE739E007B4696 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -109,6 +121,7 @@
 		1836390F240D093C00854C94 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				186A9B2D241657BE00B51010 /* TableViewCell */,
 				18363911240D095100854C94 /* Controller */,
 				18363910240D094700854C94 /* Storyboard */,
 			);
@@ -126,6 +139,9 @@
 		18363911240D095100854C94 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				186A9B272416572500B51010 /* HomeViewController.swift */,
+				186A9B292416573300B51010 /* GraphViewController.swift */,
+				186A9B2B2416574B00B51010 /* CategorizedViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -200,6 +216,15 @@
 			children = (
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		186A9B2D241657BE00B51010 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				186A9B2E241657FA00B51010 /* CategorizedExpenceCell.swift */,
+				186A9B2F241657FA00B51010 /* CategorizedExpenceCell.xib */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		186CC7B7240F77FD00126016 /* GuideScreen */ = {
@@ -395,6 +420,7 @@
 			isa = PBXGroup;
 			children = (
 				1885A6E123FAA9A600406492 /* User.swift */,
+				186A9B2524164D3800B51010 /* Expenses.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -507,6 +533,7 @@
 				1836391E240D1BAA00854C94 /* Payment.storyboard in Resources */,
 				1885A69723FA707100406492 /* LaunchScreen.storyboard in Resources */,
 				1885A69423FA707100406492 /* Assets.xcassets in Resources */,
+				186A9B31241657FA00B51010 /* CategorizedExpenceCell.xib in Resources */,
 				18363914240D099A00854C94 /* Home.storyboard in Resources */,
 				18741E1623FE739E007B4696 /* Login.storyboard in Resources */,
 				18741E2723FE8D65007B4696 /* Montserrat-SemiBold.otf in Resources */,
@@ -570,18 +597,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186A9B30241657FA00B51010 /* CategorizedExpenceCell.swift in Sources */,
+				186A9B282416572500B51010 /* HomeViewController.swift in Sources */,
 				18363927240D48CD00854C94 /* LoginViewController.swift in Sources */,
 				1885A6C823FA775700406492 /* ProgressButton.swift in Sources */,
 				186CC7BD240F784200126016 /* GuideScreenViewController.swift in Sources */,
 				1885A68F23FA706D00406492 /* ViewController.swift in Sources */,
 				1885A68B23FA706D00406492 /* AppDelegate.swift in Sources */,
 				1885A6C723FA775700406492 /* SwiftLoader.swift in Sources */,
+				186A9B2A2416573300B51010 /* GraphViewController.swift in Sources */,
 				1885A6C323FA775700406492 /* ClosurButton.swift in Sources */,
 				18741E2C23FEB14C007B4696 /* SignUpViewController.swift in Sources */,
 				18FA46DC24039766002AE90E /* SkyFloatingLabelTextField.swift in Sources */,
 				1885A68D23FA706D00406492 /* SceneDelegate.swift in Sources */,
 				18741E2A23FEB053007B4696 /* UIExtensions.swift in Sources */,
 				1885A6C523FA775700406492 /* CommonUtilities.swift in Sources */,
+				186A9B2624164D3800B51010 /* Expenses.swift in Sources */,
 				18FA46DE24039766002AE90E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				1885A6BE23FA775700406492 /* Constants.swift in Sources */,
 				18FA46DD24039766002AE90E /* UITextField+fixCaretPosition.swift in Sources */,
@@ -589,6 +620,7 @@
 				188DB737240E78B9008905A1 /* RootScreenUtility.swift in Sources */,
 				1885A6C623FA775700406492 /* CustomInfinteIndicator.swift in Sources */,
 				1885A6C223FA775700406492 /* MKRImagePicker.swift in Sources */,
+				186A9B2C2416574B00B51010 /* CategorizedViewController.swift in Sources */,
 				188DB73A240E86F4008905A1 /* Identifiers.swift in Sources */,
 				1885A6E223FAA9A600406492 /* User.swift in Sources */,
 				1885A6C023FA775700406492 /* Logger.swift in Sources */,

@@ -10,23 +10,29 @@ import Foundation
 import UIKit
 import ObjectMapper
 class User: NSObject,DataModel, NSCoding, Mappable {
+    
+    static var shared: User?
+    var name       : String?
+    var email      : String?
+    var mobile     : String?
+    var uid        : String?
+    var userImage  : String?
+    var expenses   :[Expense] = []
+    
     required init?(map: Map) {}
+    override init() {}
     
     func mapping(map: Map) {
         uid        <- map["id"]
         name       <- map["name"]
         email      <- map["email"]
         mobile     <- map["mobile"]
+        expenses   <- map["expenses"]
     }
     
-    static var shared: User?
-    var name         : String?
-    var email        : String?
-    var mobile       : String?
-    var uid          : String?
-    var userImage    : String?
+
     
-    override init() {}
+    
     
     required init(coder decoder: NSCoder) {
         self.uid = decoder.decodeObject(forKey: "uid") as? String ?? ""

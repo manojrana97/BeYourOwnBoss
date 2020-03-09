@@ -6,22 +6,81 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-SemiBold.otf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Home-->
         <scene sceneID="kRq-Z5-rmo">
             <objects>
-                <viewController title="Home" id="dE5-0g-4OS" sceneMemberID="viewController">
+                <viewController title="Home" id="dE5-0g-4OS" customClass="HomeViewController" customModule="BYOB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OKl-om-ifC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAJ-JQ-MMk">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expenses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBX-La-DcF">
+                                        <rect key="frame" x="156" y="39" width="102.5" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="7Sa-Pj-nQa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="JBX-La-DcF" secondAttribute="bottom" constant="5" id="9vO-M4-0XH"/>
+                                    <constraint firstAttribute="height" constant="84" id="QT4-dU-n79"/>
+                                    <constraint firstItem="JBX-La-DcF" firstAttribute="centerX" secondItem="vAJ-JQ-MMk" secondAttribute="centerX" id="W3T-sZ-tnR"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BWh-Vb-hXS">
+                                <rect key="frame" x="20" y="94" width="374" height="51"/>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.2274509804" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="foL-mt-N8R"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Graph"/>
+                                    <segment title="Categorized"/>
+                                </segments>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTz-4t-t7H">
+                                <rect key="frame" x="0.0" y="154" width="414" height="659"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.41176470590000003" green="0.46274509800000002" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BWh-Vb-hXS" firstAttribute="top" secondItem="vAJ-JQ-MMk" secondAttribute="bottom" constant="10" id="BpW-FR-U9D"/>
+                            <constraint firstItem="vAJ-JQ-MMk" firstAttribute="top" secondItem="OKl-om-ifC" secondAttribute="top" id="EiW-k4-kO9"/>
+                            <constraint firstItem="TUR-9j-TYF" firstAttribute="bottom" secondItem="TTz-4t-t7H" secondAttribute="bottom" id="Gkq-1L-kLd"/>
+                            <constraint firstItem="TUR-9j-TYF" firstAttribute="trailing" secondItem="TTz-4t-t7H" secondAttribute="trailing" id="Iyg-7Y-UcX"/>
+                            <constraint firstItem="vAJ-JQ-MMk" firstAttribute="trailing" secondItem="TUR-9j-TYF" secondAttribute="trailing" id="Tdo-cp-Iu7"/>
+                            <constraint firstItem="vAJ-JQ-MMk" firstAttribute="leading" secondItem="TUR-9j-TYF" secondAttribute="leading" id="ej2-6n-mGO"/>
+                            <constraint firstItem="TUR-9j-TYF" firstAttribute="trailing" secondItem="BWh-Vb-hXS" secondAttribute="trailing" constant="20" id="g5n-Ww-lVm"/>
+                            <constraint firstItem="BWh-Vb-hXS" firstAttribute="leading" secondItem="TUR-9j-TYF" secondAttribute="leading" constant="20" id="kpX-Jk-FHo"/>
+                            <constraint firstItem="TTz-4t-t7H" firstAttribute="leading" secondItem="TUR-9j-TYF" secondAttribute="leading" id="l9R-W7-PNE"/>
+                            <constraint firstItem="BWh-Vb-hXS" firstAttribute="centerX" secondItem="TUR-9j-TYF" secondAttribute="centerX" id="oaB-PC-Cvf"/>
+                            <constraint firstItem="TTz-4t-t7H" firstAttribute="top" secondItem="BWh-Vb-hXS" secondAttribute="bottom" constant="10" id="sDE-ri-l0i"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TUR-9j-TYF"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="home" selectedImage="homeSelected" id="7PQ-yd-SS9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UXw-Eo-E71" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1014" y="200"/>
+            <point key="canvasLocation" x="1011.5942028985507" y="198.21428571428569"/>
         </scene>
         <!--Payment-->
         <scene sceneID="JiC-S5-4DT">
@@ -36,10 +95,10 @@
         <!--Tab Bar Controller-->
         <scene sceneID="6d7-dL-Sze">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rP4-oK-7AK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="RdX-9e-BsW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0gO-no-R7l">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -50,6 +109,7 @@
                         <segue destination="mx9-WF-yim" kind="relationship" relationship="viewControllers" id="Vpl-k8-jP8"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rP4-oK-7AK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="100.00000000000001" y="99.776785714285708"/>
         </scene>
@@ -72,6 +132,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1w-cl-zB5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="100" y="496"/>
+        </scene>
+        <!--Graph View Controller-->
+        <scene sceneID="mvg-px-Hgx">
+            <objects>
+                <viewController id="5Rc-ci-W6F" customClass="GraphViewController" customModule="BYOB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2M8-7k-pm3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bRh-qa-DRs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1767" y="162"/>
+        </scene>
+        <!--Categorized View Controller-->
+        <scene sceneID="BhO-Bk-Q3w">
+            <objects>
+                <viewController id="vOH-eB-DCh" customClass="CategorizedViewController" customModule="BYOB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7jI-ru-Sm0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eCm-5Z-T4F">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="99A-gF-jRx" firstAttribute="bottom" secondItem="eCm-5Z-T4F" secondAttribute="bottom" id="0AB-UR-TC7"/>
+                            <constraint firstItem="eCm-5Z-T4F" firstAttribute="top" secondItem="99A-gF-jRx" secondAttribute="top" id="2Tl-ao-VAU"/>
+                            <constraint firstItem="99A-gF-jRx" firstAttribute="trailing" secondItem="eCm-5Z-T4F" secondAttribute="trailing" id="esh-fn-ht1"/>
+                            <constraint firstItem="eCm-5Z-T4F" firstAttribute="leading" secondItem="99A-gF-jRx" secondAttribute="leading" id="hAG-TY-ngL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="99A-gF-jRx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lec-hQ-bdT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2494" y="53"/>
         </scene>
     </scenes>
     <resources>

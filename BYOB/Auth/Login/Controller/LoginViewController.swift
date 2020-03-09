@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
     }
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         if InputValidations.checkLoginValidations(email: emailTextField.text!, password: passwordTextField.text!, presentationController: self){
-            
+            loginWebService()
         }
     }
     
