@@ -38,17 +38,16 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func signupButtonTapped(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-    }
+    
     
     //MARK:- WebServices Methods
     private func loginWebService(){
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) {[weak self] (user, error) in
             
             if user != nil{
-                User.shared?.uid = Auth.auth().currentUser!.uid
-                User.shared?.email = Auth.auth().currentUser!.email
+                let userId = Auth.auth().currentUser!.uid
+                User.shared.uid = userId
+                User.shared.email = Auth.auth().currentUser!.email
                 self?.getUserData()
             }else{
                 AlertUtility.showAlert(self, title: Constants.AlertTitle.error, message: error?.localizedDescription)            }
@@ -57,7 +56,7 @@ class LoginViewController: UIViewController {
     
     private func getUserData(){
         let db = Firestore.firestore()
-        let docRef = db.collection("users").document(User.shared!.uid!)
+        let docRef = db.collection("users").document(User.shared.uid!)
         
         docRef.getDocument { (document, error) in
             if let document = document,document.exists{
@@ -71,8 +70,8 @@ class LoginViewController: UIViewController {
     
     func parseJSON(json:Any){
         let loggedInUser = Mapper<User>().map(JSON: json as! [String : Any])
-        User.shared?.name = loggedInUser?.name ?? "-"
-        User.shared?.mobile = loggedInUser?.mobile ?? "NA"
+        User.shared.name = loggedInUser?.name ?? "-"
+        User.shared.mobile = loggedInUser?.mobile ?? "NA"
         UserDefaultManager.shared.saveUser(User.shared ?? User())
         RootScreenUtility.setRootScreen(window: RootScreenUtility.window(for: self.view))
     }

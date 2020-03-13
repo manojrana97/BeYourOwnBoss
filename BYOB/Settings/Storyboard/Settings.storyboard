@@ -7,18 +7,37 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Setting Options View Controller-->
         <scene sceneID="4C7-s8-reV">
             <objects>
-                <viewController id="aHB-jU-5oa" sceneMemberID="viewController">
+                <viewController id="aHB-jU-5oa" customClass="SettingOptionsViewController" customModule="BYOB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cem-4L-dxI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MbZ-xr-7JG">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="aHB-jU-5oa" id="dXU-Ry-kzO"/>
+                                    <outlet property="delegate" destination="aHB-jU-5oa" id="qID-7n-qXB"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MbZ-xr-7JG" firstAttribute="top" secondItem="1V3-Ij-7CT" secondAttribute="top" id="fdb-UQ-PDK"/>
+                            <constraint firstItem="1V3-Ij-7CT" firstAttribute="trailing" secondItem="MbZ-xr-7JG" secondAttribute="trailing" id="vJm-2n-nog"/>
+                            <constraint firstItem="1V3-Ij-7CT" firstAttribute="bottom" secondItem="MbZ-xr-7JG" secondAttribute="bottom" id="xY2-RC-gjX"/>
+                            <constraint firstItem="MbZ-xr-7JG" firstAttribute="leading" secondItem="1V3-Ij-7CT" secondAttribute="leading" id="y8Z-K6-GSV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1V3-Ij-7CT"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="settings" selectedImage="settingsSelected" id="Sts-f1-gfk"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="settingOptionsTableView" destination="MbZ-xr-7JG" id="ZcT-Cq-5pD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DjM-xK-zz9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,23 +11,23 @@ import UIKit
 import ObjectMapper
 class User: NSObject,DataModel, NSCoding, Mappable {
     
-    static var shared: User?
+    static var shared: User = User()
     var name       : String?
     var email      : String?
     var mobile     : String?
-    var uid        : String?
+    var uid        : String!
     var userImage  : String?
-    var expenses   :[Expense] = []
+    //var expenses   :[Expense] = []
     
     required init?(map: Map) {}
     override init() {}
     
     func mapping(map: Map) {
-        uid        <- map["id"]
+        uid        <- map["uid"]
         name       <- map["name"]
         email      <- map["email"]
         mobile     <- map["mobile"]
-        expenses   <- map["expenses"]
+        //expenses   <- map["expenses"]
     }
     
 

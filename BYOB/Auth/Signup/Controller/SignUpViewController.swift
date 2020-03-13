@@ -41,6 +41,11 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     private func signupWebservice(){
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { [weak self] (user, error) in
             

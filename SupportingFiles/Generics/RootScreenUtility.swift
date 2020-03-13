@@ -23,16 +23,9 @@ class RootScreenUtility {
     class func setRootScreen(window: UIWindow?) {
         if UserDefaultManager.shared.getUser() {
             let homeStoryboard = UIStoryboard(name: Storyboard.home.name, bundle: nil).instantiateInitialViewController()
-//            if let homeVC = homeStoryboard?.children[0] as? HomeView {
-//                dashboard.dashBoardType = InventoryCategoryType.residentialSale
-//            }
+
             window?.rootViewController = homeStoryboard
-    }
-        else if UserDefaultManager.shared.showGuideScreen() {
-            let guideController = UIStoryboard(name: Storyboard.guide.name, bundle: nil).instantiateInitialViewController()
-            window?.rootViewController = guideController
-        }
-        else {
+    }else {
             let login = UIStoryboard(name: Storyboard.login.name, bundle: nil).instantiateInitialViewController()
             window?.rootViewController = login!
         }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hIq-oA-Q9z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4NW-CH-4EX">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -31,7 +31,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGH-Co-0Dd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="72"/>
+            <point key="canvasLocation" x="981.15942028985512" y="71.739130434782609"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="28U-1S-hpC">
@@ -59,7 +59,7 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bhb-gd-3L9" customClass="SkyFloatingLabelTextField" customModule="BYOB" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="inderjeetsingh@zapbuild.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bhb-gd-3L9" customClass="SkyFloatingLabelTextField" customModule="BYOB" customModuleProvider="target">
                                         <rect key="frame" x="20" y="99" width="374" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="OoD-Ya-z8M"/>
@@ -111,10 +111,10 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="signupButtonTapped:" destination="hIq-oA-Q9z" eventType="touchUpInside" id="F88-OV-xfZ"/>
+                                            <segue destination="VYj-VN-Bf8" kind="show" id="4wu-ZY-uOx"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S7R-kf-dx2" customClass="SkyFloatingLabelTextField" customModule="BYOB" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S7R-kf-dx2" customClass="SkyFloatingLabelTextField" customModule="BYOB" customModuleProvider="target">
                                         <rect key="frame" x="20" y="169" width="374" height="50"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -200,6 +200,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3qw-Zw-WWJ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Wfq-fc-Gpq"/>
                     <connections>
                         <outlet property="emailTextField" destination="Bhb-gd-3L9" id="ug3-iy-43G"/>
                         <outlet property="frontView" destination="URe-ej-Rr4" id="CB8-2e-jcL"/>
@@ -209,7 +210,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8i-oD-9Ws" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="CyV-7W-wUo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-730" y="28"/>
+            <point key="canvasLocation" x="176.81159420289856" y="27.717391304347828"/>
         </scene>
         <!--Signup-->
         <scene sceneID="4uU-1q-gh3">
@@ -219,7 +220,24 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gRa-rS-5t0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-730" y="417"/>
+            <point key="canvasLocation" x="178" y="451"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ouJ-4z-RWW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="4NW-CH-4EX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="35I-tB-BjX">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hIq-oA-Q9z" kind="relationship" relationship="rootViewController" id="75F-in-wHA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6OO-9f-Idp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-730.43478260869574" y="27.717391304347828"/>
         </scene>
     </scenes>
     <resources>
