@@ -165,6 +165,10 @@ class Constants: NSObject {
         static let logoutConfirmation = "Are you sure you want to logout?"
         static let profileUpdated = "Profile Updated Successfully"
         static let saveChanges = "Do you want to save changes?"
+        static let enterTitle = "Please enter title for the expense"
+        static let enterAmount = "Please enter amount for the expense"
+        static let enterValidAmount = "Please enter a valid amount for the expense. Amount must be gretter than Zero"
+        
     }
     
     struct ValidationRules {

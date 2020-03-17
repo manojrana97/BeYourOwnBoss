@@ -63,7 +63,7 @@ public class UserDefaultManager {
     }
     
     func resetUser() {
-        User.shared = nil
+        User.shared = User()
         removeValue(key: keys.loggedInUser)
     }
     

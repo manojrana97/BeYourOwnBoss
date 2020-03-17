@@ -103,13 +103,10 @@ extension UIColor {
 
        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
    }
-    class func themeGreenColor()->UIColor{
-          return UIColor.init(red: 63/255, green: 149/255, blue: 84/255, alpha: 1.0)
+    class func themeBlueColor()->UIColor{
+          return UIColor.init(red: 31/255, green: 33/255, blue: 36/255, alpha: 1.0)
       }
     
-    class func textFieldGreenColor() -> UIColor {
-        return UIColor.init(red: 63/255, green: 149/255, blue: 84/255, alpha: 1.0)
-    }
       
    convenience init(hex: Int) {
        self.init(
@@ -124,19 +121,23 @@ extension UIColor {
 extension UIFont {
     
     class func appRegularFontWith( size:CGFloat ) -> UIFont{
-        return  UIFont(name: "Roboto-Regular", size: size)!
+        return  UIFont(name: "Montserrat-Regular", size: size)!
     }
     
     class func appBoldFontWith( size:CGFloat ) -> UIFont{
-        return  UIFont(name: "Roboto-Bold", size: size)!
+        return  UIFont(name: "Montserrat-Bold", size: size)!
     }
     
     class func appMediumFontWith( size:CGFloat ) -> UIFont{
-        return  UIFont(name: "Roboto-Medium", size: size)!
+        return  UIFont(name: "Montserrat-Medium", size: size)!
     }
     
     class func appLightFontWith( size:CGFloat ) -> UIFont{
-        return  UIFont(name: "Roboto-Light", size: size)!
+        return  UIFont(name: "Montserrat-Light", size: size)!
+    }
+    
+    class func appSemiboldFontWith( size:CGFloat ) -> UIFont{
+        return  UIFont(name: "Montserrat-SemiBold", size: size)!
     }
     
 }

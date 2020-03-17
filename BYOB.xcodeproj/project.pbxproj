@@ -52,6 +52,10 @@
 		188CF4812418B54600278F89 /* SettingOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188CF4802418B54600278F89 /* SettingOptionsViewController.swift */; };
 		188DB737240E78B9008905A1 /* RootScreenUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DB736240E78B9008905A1 /* RootScreenUtility.swift */; };
 		188DB73A240E86F4008905A1 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DB739240E86F4008905A1 /* Identifiers.swift */; };
+		18C0996724208B6D00919656 /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0996624208B6D00919656 /* AddExpenseViewController.swift */; };
+		18C099692420B39200919656 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C099682420B39200919656 /* ExpensesViewController.swift */; };
+		18C0996D2420CA0800919656 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0996B2420CA0800919656 /* CategoryCollectionViewCell.swift */; };
+		18C0996E2420CA0800919656 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C0996C2420CA0800919656 /* CategoryCollectionViewCell.xib */; };
 		18FA46DC24039766002AE90E /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA46D924039766002AE90E /* SkyFloatingLabelTextField.swift */; };
 		18FA46DD24039766002AE90E /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA46DA24039766002AE90E /* UITextField+fixCaretPosition.swift */; };
 		18FA46DE24039766002AE90E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA46DB24039766002AE90E /* SkyFloatingLabelTextFieldWithIcon.swift */; };
@@ -104,6 +108,10 @@
 		188CF4802418B54600278F89 /* SettingOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionsViewController.swift; sourceTree = "<group>"; };
 		188DB736240E78B9008905A1 /* RootScreenUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreenUtility.swift; sourceTree = "<group>"; };
 		188DB739240E86F4008905A1 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
+		18C0996624208B6D00919656 /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
+		18C099682420B39200919656 /* ExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
+		18C0996B2420CA0800919656 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		18C0996C2420CA0800919656 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		18FA46D924039766002AE90E /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
 		18FA46DA24039766002AE90E /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		18FA46DB24039766002AE90E /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
@@ -165,6 +173,7 @@
 		18363916240D185E00854C94 /* Payment */ = {
 			isa = PBXGroup;
 			children = (
+				18C0996A2420C9D800919656 /* CollectionViewCell */,
 				18363918240D187700854C94 /* Controller */,
 				18363917240D186E00854C94 /* Storyboard */,
 			);
@@ -182,6 +191,8 @@
 		18363918240D187700854C94 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				18C0996624208B6D00919656 /* AddExpenseViewController.swift */,
+				18C099682420B39200919656 /* ExpensesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -451,6 +462,15 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		18C0996A2420C9D800919656 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				18C0996B2420CA0800919656 /* CategoryCollectionViewCell.swift */,
+				18C0996C2420CA0800919656 /* CategoryCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		18FA46D5240395E5002AE90E /* TextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -552,6 +572,7 @@
 				1885A69423FA707100406492 /* Assets.xcassets in Resources */,
 				186A9B31241657FA00B51010 /* CategorizedExpenceCell.xib in Resources */,
 				18363914240D099A00854C94 /* Home.storyboard in Resources */,
+				18C0996E2420CA0800919656 /* CategoryCollectionViewCell.xib in Resources */,
 				18741E1623FE739E007B4696 /* Login.storyboard in Resources */,
 				18741E2723FE8D65007B4696 /* Montserrat-SemiBold.otf in Resources */,
 				1885A6A523FA710000406492 /* Signup.storyboard in Resources */,
@@ -616,6 +637,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				188CF47E2418B2F100278F89 /* SettingOptionsCell.swift in Sources */,
+				18C099692420B39200919656 /* ExpensesViewController.swift in Sources */,
 				186A9B30241657FA00B51010 /* CategorizedExpenceCell.swift in Sources */,
 				186A9B282416572500B51010 /* HomeViewController.swift in Sources */,
 				18363927240D48CD00854C94 /* LoginViewController.swift in Sources */,
@@ -628,10 +650,12 @@
 				1885A6C323FA775700406492 /* ClosurButton.swift in Sources */,
 				18741E2C23FEB14C007B4696 /* SignUpViewController.swift in Sources */,
 				18FA46DC24039766002AE90E /* SkyFloatingLabelTextField.swift in Sources */,
+				18C0996724208B6D00919656 /* AddExpenseViewController.swift in Sources */,
 				1885A68D23FA706D00406492 /* SceneDelegate.swift in Sources */,
 				18741E2A23FEB053007B4696 /* UIExtensions.swift in Sources */,
 				1885A6C523FA775700406492 /* CommonUtilities.swift in Sources */,
 				186A9B2624164D3800B51010 /* Expenses.swift in Sources */,
+				18C0996D2420CA0800919656 /* CategoryCollectionViewCell.swift in Sources */,
 				18FA46DE24039766002AE90E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				1885A6BE23FA775700406492 /* Constants.swift in Sources */,
 				18FA46DD24039766002AE90E /* UITextField+fixCaretPosition.swift in Sources */,

@@ -72,7 +72,8 @@ class LoginViewController: UIViewController {
         let loggedInUser = Mapper<User>().map(JSON: json as! [String : Any])
         User.shared.name = loggedInUser?.name ?? "-"
         User.shared.mobile = loggedInUser?.mobile ?? "NA"
-        UserDefaultManager.shared.saveUser(User.shared ?? User())
+        User.shared.expenseDataBaseSetup = loggedInUser?.expenseDataBaseSetup ?? false
+        UserDefaultManager.shared.saveUser(User.shared)
         RootScreenUtility.setRootScreen(window: RootScreenUtility.window(for: self.view))
     }
 }

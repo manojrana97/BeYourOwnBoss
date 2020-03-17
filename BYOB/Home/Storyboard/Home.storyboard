@@ -20,63 +20,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAJ-JQ-MMk">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expenses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBX-La-DcF">
-                                        <rect key="frame" x="156" y="39" width="102.5" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="7Sa-Pj-nQa"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="21"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="JBX-La-DcF" secondAttribute="bottom" constant="5" id="9vO-M4-0XH"/>
-                                    <constraint firstAttribute="height" constant="84" id="QT4-dU-n79"/>
-                                    <constraint firstItem="JBX-La-DcF" firstAttribute="centerX" secondItem="vAJ-JQ-MMk" secondAttribute="centerX" id="W3T-sZ-tnR"/>
-                                </constraints>
-                            </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BWh-Vb-hXS">
-                                <rect key="frame" x="20" y="94" width="374" height="51"/>
-                                <color key="backgroundColor" red="0.12549019610000001" green="0.2274509804" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="2" y="96" width="410" height="41"/>
+                                <color key="backgroundColor" red="0.1215572581" green="0.12939602140000001" blue="0.14113715290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="foL-mt-N8R"/>
+                                    <constraint firstAttribute="height" constant="40" id="foL-mt-N8R"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Graph"/>
                                     <segment title="Categorized"/>
                                 </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="segmentValueChanged:" destination="dE5-0g-4OS" eventType="valueChanged" id="WB8-KW-fX0"/>
+                                </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTz-4t-t7H">
-                                <rect key="frame" x="0.0" y="154" width="414" height="659"/>
+                                <rect key="frame" x="2" y="141" width="410" height="672"/>
                             </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expenses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBX-La-DcF">
+                                <rect key="frame" x="161.5" y="46" width="91.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7Sa-Pj-nQa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.41176470590000003" green="0.46274509800000002" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.12156862745098039" green="0.12941176470588234" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="BWh-Vb-hXS" firstAttribute="top" secondItem="vAJ-JQ-MMk" secondAttribute="bottom" constant="10" id="BpW-FR-U9D"/>
-                            <constraint firstItem="vAJ-JQ-MMk" firstAttribute="top" secondItem="OKl-om-ifC" secondAttribute="top" id="EiW-k4-kO9"/>
+                            <constraint firstItem="BWh-Vb-hXS" firstAttribute="top" secondItem="JBX-La-DcF" secondAttribute="bottom" constant="10" id="0vE-Ot-FIe"/>
+                            <constraint firstItem="JBX-La-DcF" firstAttribute="top" secondItem="TUR-9j-TYF" secondAttribute="top" constant="2" id="1IB-st-ScR"/>
                             <constraint firstItem="TUR-9j-TYF" firstAttribute="bottom" secondItem="TTz-4t-t7H" secondAttribute="bottom" id="Gkq-1L-kLd"/>
-                            <constraint firstItem="TUR-9j-TYF" firstAttribute="trailing" secondItem="TTz-4t-t7H" secondAttribute="trailing" id="Iyg-7Y-UcX"/>
-                            <constraint firstItem="vAJ-JQ-MMk" firstAttribute="trailing" secondItem="TUR-9j-TYF" secondAttribute="trailing" id="Tdo-cp-Iu7"/>
-                            <constraint firstItem="vAJ-JQ-MMk" firstAttribute="leading" secondItem="TUR-9j-TYF" secondAttribute="leading" id="ej2-6n-mGO"/>
-                            <constraint firstItem="TUR-9j-TYF" firstAttribute="trailing" secondItem="BWh-Vb-hXS" secondAttribute="trailing" constant="20" id="g5n-Ww-lVm"/>
-                            <constraint firstItem="BWh-Vb-hXS" firstAttribute="leading" secondItem="TUR-9j-TYF" secondAttribute="leading" constant="20" id="kpX-Jk-FHo"/>
-                            <constraint firstItem="TTz-4t-t7H" firstAttribute="leading" secondItem="TUR-9j-TYF" secondAttribute="leading" id="l9R-W7-PNE"/>
+                            <constraint firstItem="TUR-9j-TYF" firstAttribute="trailing" secondItem="TTz-4t-t7H" secondAttribute="trailing" constant="2" id="Iyg-7Y-UcX"/>
+                            <constraint firstItem="JBX-La-DcF" firstAttribute="centerX" secondItem="TUR-9j-TYF" secondAttribute="centerX" id="eQZ-Sn-bl1"/>
+                            <constraint firstItem="TUR-9j-TYF" firstAttribute="trailing" secondItem="BWh-Vb-hXS" secondAttribute="trailing" constant="2" id="g5n-Ww-lVm"/>
+                            <constraint firstItem="BWh-Vb-hXS" firstAttribute="leading" secondItem="TUR-9j-TYF" secondAttribute="leading" constant="2" id="kpX-Jk-FHo"/>
+                            <constraint firstItem="TTz-4t-t7H" firstAttribute="leading" secondItem="TUR-9j-TYF" secondAttribute="leading" constant="2" id="l9R-W7-PNE"/>
                             <constraint firstItem="BWh-Vb-hXS" firstAttribute="centerX" secondItem="TUR-9j-TYF" secondAttribute="centerX" id="oaB-PC-Cvf"/>
-                            <constraint firstItem="TTz-4t-t7H" firstAttribute="top" secondItem="BWh-Vb-hXS" secondAttribute="bottom" constant="10" id="sDE-ri-l0i"/>
+                            <constraint firstItem="TTz-4t-t7H" firstAttribute="top" secondItem="BWh-Vb-hXS" secondAttribute="bottom" constant="5" id="sDE-ri-l0i"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TUR-9j-TYF"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="home" selectedImage="homeSelected" id="7PQ-yd-SS9"/>
+                    <connections>
+                        <outlet property="containerView" destination="TTz-4t-t7H" id="saM-kT-Qox"/>
+                        <outlet property="segmentControl" destination="BWh-Vb-hXS" id="mcs-EA-jKC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UXw-Eo-E71" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,11 +133,12 @@
         <!--Graph View Controller-->
         <scene sceneID="mvg-px-Hgx">
             <objects>
-                <viewController id="5Rc-ci-W6F" customClass="GraphViewController" customModule="BYOB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GraphViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Rc-ci-W6F" customClass="GraphViewController" customModule="BYOB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2M8-7k-pm3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="LMA-jB-KsF"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRh-qa-DRs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -150,14 +148,18 @@
         <!--Categorized View Controller-->
         <scene sceneID="BhO-Bk-Q3w">
             <objects>
-                <viewController id="vOH-eB-DCh" customClass="CategorizedViewController" customModule="BYOB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategorizedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vOH-eB-DCh" customClass="CategorizedViewController" customModule="BYOB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7jI-ru-Sm0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eCm-5Z-T4F">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eCm-5Z-T4F">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vOH-eB-DCh" id="f9b-ux-9pp"/>
+                                    <outlet property="delegate" destination="vOH-eB-DCh" id="fKR-Ej-I1Q"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -169,10 +171,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="99A-gF-jRx"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="eCm-5Z-T4F" id="Q4C-Hi-n1N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lec-hQ-bdT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2494" y="53"/>
+            <point key="canvasLocation" x="2417" y="-3"/>
         </scene>
     </scenes>
     <resources>

@@ -14,10 +14,16 @@ class Expense: NSObject, Mappable {
     static var shared: User?
     var name       : String?
     var category   : Category?
-    var amount     : String?
+    var amount     : Int?
     var date       : String?
     required init?(map: Map) {}
-    override init() {}
+    
+    init(name:String,category:Category,amount:Int,date:String) {
+        self.name = name
+        self.category = category
+        self.amount = amount
+        self.date = date
+    }
     
     func mapping(map: Map) {
         name      <- map["name"]
@@ -33,9 +39,14 @@ class Category: NSObject, Mappable {
     static var shared: User?
     var name    : String?
     var id      : Int?
+    var isSelected : Bool?
+    var image :UIImage?
     
     required init?(map: Map) {}
-    override init() {}
+    init(name:String, id:Int, image:UIImage) {
+        self.name = name
+        self.id = id
+    }
     
     func mapping(map: Map) {
         id     <- map["id"]

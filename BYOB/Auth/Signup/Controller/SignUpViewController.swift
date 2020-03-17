@@ -51,21 +51,22 @@ class SignUpViewController: UIViewController {
             
             if user != nil{
                 let userId = Auth.auth().currentUser?.uid
-                User.shared?.uid = userId!
-                User.shared?.name = self?.nameTextField.text!
-                User.shared?.mobile = self?.mobileNumberTextField.text!
-                User.shared?.email = self?.emailTextField.text!
+                User.shared.uid = userId!
+                User.shared.name = self?.nameTextField.text!
+                User.shared.mobile = self?.mobileNumberTextField.text!
+                User.shared.email = self?.emailTextField.text!
+                User.shared.expenseDataBaseSetup = false
                 self?.setNewUserDataBase(userId: userId!)
             }
         }
     }
     
     private func setNewUserDataBase(userId:String){
-        self.db.collection("users").document(userId).setData(["name":self.nameTextField.text!,"mobile":self.mobileNumberTextField.text!], completion: { (error) in
+        self.db.collection("users").document(userId).setData(["name":self.nameTextField.text!,"mobile":self.mobileNumberTextField.text!,"isExpenseSeted":false], completion: { (error) in
             if let _error = error{
                 AlertUtility.showAlert(self, title: Constants.AlertTitle.error, message: _error.localizedDescription)
             }else{
-                UserDefaultManager.shared.saveUser(User.shared ?? User())
+                UserDefaultManager.shared.saveUser(User.shared)
                 RootScreenUtility.setRootScreen(window: RootScreenUtility.window(for: self.view))
             }
         })

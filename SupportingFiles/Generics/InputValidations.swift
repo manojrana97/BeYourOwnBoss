@@ -82,6 +82,26 @@ class InputValidations{
         return true
     }
     
+    //MARK:- Expense Attributes Validations
+    class func isTitleValid(title:String,presentationController:UIViewController) -> Bool{
+        if title == ""{
+            AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterTitle)
+            return false
+        }
+        return true
+    }
+    
+    class func isAmountValid(amount:String,presentationController:UIViewController) -> Bool{
+        if amount == ""{
+            AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterAmount)
+            return false
+        }else if amount == "0"{
+            AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterValidAmount)
+            return false
+        }
+        return true
+    }
+    
     class func isCategoryValid(category:String,presentationController:UIViewController)->Bool{
         if category == ""{
             AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterCategory)

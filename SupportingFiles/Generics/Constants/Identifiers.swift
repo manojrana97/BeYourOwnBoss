@@ -18,6 +18,11 @@ struct Storyboard {
     static let home           : StoryboardTuple = ("Home", "")
 }
 
+struct ViewControllers {
+    static let graphVC = "GraphViewController"
+    static let categorizedVC = "CategorizedViewController"
+}
+
 struct Segue {
     
 }
