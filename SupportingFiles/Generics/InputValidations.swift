@@ -102,8 +102,8 @@ class InputValidations{
         return true
     }
     
-    class func isCategoryValid(category:String,presentationController:UIViewController)->Bool{
-        if category == ""{
+    class func isCategoryValid(category:Category?,presentationController:UIViewController)->Bool{
+        if category == nil{
             AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterCategory)
             return false
         }

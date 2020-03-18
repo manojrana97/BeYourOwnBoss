@@ -40,12 +40,13 @@ class Category: NSObject, Mappable {
     var name    : String?
     var id      : Int?
     var isSelected : Bool?
-    var image :UIImage?
+    var categoryImage :UIImage?
     
     required init?(map: Map) {}
     init(name:String, id:Int, image:UIImage) {
         self.name = name
         self.id = id
+        self.categoryImage = image
     }
     
     func mapping(map: Map) {

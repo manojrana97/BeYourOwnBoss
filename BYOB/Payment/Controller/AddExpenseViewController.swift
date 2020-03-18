@@ -35,13 +35,16 @@ class AddExpenseViewController: UIViewController {
     }
     
     @IBAction func addExpenseButtonTapped(_ sender: Any) {
-        if User.shared.expenseDataBaseSetup! {
-            addNewExpense(userID: User.shared.uid) {
-                self.dismiss(animated: true, completion: nil)
+        if checkInputValidations() {
+            if User.shared.expenseDataBaseSetup! {
+                addNewExpense(userID: User.shared.uid) {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }else{
+                setExpencesDataBase(userId: User.shared.uid)
             }
-        }else{
-            setExpencesDataBase(userId: User.shared.uid)
         }
+        
     }
     
     //MARK:- Private Functions
@@ -68,7 +71,7 @@ class AddExpenseViewController: UIViewController {
     private func checkInputValidations() -> Bool {
         if InputValidations.isTitleValid(title: titleTextField.text!, presentationController: self) &&
             InputValidations.isAmountValid(amount: amountTextField.text ?? "", presentationController: self) &&
-            InputValidations.isCategoryValid(category: selectedCategory!.name!, presentationController: self){
+            InputValidations.isCategoryValid(category: selectedCategory, presentationController: self){
             return true
         }
         return false
@@ -77,7 +80,7 @@ class AddExpenseViewController: UIViewController {
 }
 
 //MARK:- CollectionView Delegates and Data Sources
-extension AddExpenseViewController:UICollectionViewDelegate,UICollectionViewDataSource{
+extension AddExpenseViewController:UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return User.categoriesAvailable.count
     }
@@ -85,9 +88,15 @@ extension AddExpenseViewController:UICollectionViewDelegate,UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let categoriesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
         categoriesCell.categoryLabel.text = User.categoriesAvailable[indexPath.row].name!
-        categoriesCell.categoryImageView.image = User.categoriesAvailable[indexPath.row].image!
+        categoriesCell.categoryImageView.image = User.categoriesAvailable[indexPath.row].categoryImage!
         return categoriesCell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 120, height: 100)
+    
+    }
+    
     
     
 }
