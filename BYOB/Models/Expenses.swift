@@ -39,7 +39,7 @@ class Category: NSObject, Mappable {
     static var shared: User?
     var name    : String?
     var id      : Int?
-    var isSelected : Bool?
+    var isSelected : Bool? = false
     var categoryImage :UIImage?
     
     required init?(map: Map) {}

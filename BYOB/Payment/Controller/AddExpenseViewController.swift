@@ -21,17 +21,19 @@ class AddExpenseViewController: UIViewController {
     private var newExpense:Expense?
     let db = Firestore.firestore()
     private var selectedCategory:Category?
+    private var selectedIndex:Int = 0
     //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         dateTextField.inputView = datePicker
         categoryCollectionView.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell")
+        categoryCollectionView.selectItem(at: IndexPath(item: selectedIndex, section: 0), animated: false, scrollPosition: .centeredVertically)
         
     }
     
     //MARK:- IBActions
     @IBAction func closeButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func addExpenseButtonTapped(_ sender: Any) {
@@ -87,17 +89,25 @@ extension AddExpenseViewController:UICollectionViewDelegate,UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let categoriesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
-        categoriesCell.categoryLabel.text = User.categoriesAvailable[indexPath.row].name!
-        categoriesCell.categoryImageView.image = User.categoriesAvailable[indexPath.row].categoryImage!
+        categoriesCell.setCategoryDetails(category: User.categoriesAvailable[indexPath.row])
         return categoriesCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: 100)
+        return CGSize(width: 80, height: 100)
     
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if selectedIndex != indexPath.row{
+            User.categoriesAvailable[selectedIndex].isSelected = false
+            User.categoriesAvailable[indexPath.row].isSelected = true
+            selectedCategory = User.categoriesAvailable[indexPath.row]
+            selectedIndex = indexPath.row
+            collectionView.reloadData()
+        }
+        
+    }
     
 }
 

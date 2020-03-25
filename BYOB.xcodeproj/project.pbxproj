@@ -83,7 +83,7 @@
 		18741E2123FE8D65007B4696 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
 		18741E2923FEB053007B4696 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		18741E2B23FEB14C007B4696 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		1885A68723FA706D00406492 /* BYOB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BYOB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1885A68723FA706D00406492 /* Expenser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1885A68A23FA706D00406492 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1885A68C23FA706D00406492 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1885A68E23FA706D00406492 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -321,7 +321,7 @@
 		1885A68823FA706D00406492 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1885A68723FA706D00406492 /* BYOB.app */,
+				1885A68723FA706D00406492 /* Expenser.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -525,7 +525,7 @@
 			);
 			name = BYOB;
 			productName = BYOB;
-			productReference = 1885A68723FA706D00406492 /* BYOB.app */;
+			productReference = 1885A68723FA706D00406492 /* Expenser.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -813,7 +813,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.byob.BYOB;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Expenser;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -832,7 +832,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.byob.BYOB;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Expenser;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
