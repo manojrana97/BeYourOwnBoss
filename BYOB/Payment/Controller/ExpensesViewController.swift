@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import ObjectMapper
 
 class ExpensesViewController: UIViewController {
     //MARK:- IBOutlets
     @IBOutlet weak var expensesTableView: UITableView!
     
     //MARK:- Variables
-    
+    private var expenses:[Expense] = []
     //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,24 @@ class ExpensesViewController: UIViewController {
     }
     
     //MARK:- Private Functions
+    private func getUserData(){
+        let db = Firestore.firestore()
+        let docRef = db.collection("expenses").document(User.shared.uid!)
+        
+        docRef.getDocument { (document, error) in
+            if let document = document,document.exists{
+                if let dataDescription = document.data() {
+                    print(dataDescription)
+                    self.parseJSON(json: dataDescription)
+                }
+            }
+        }
+    }
     
+    func parseJSON(json:Any){
+        let loggedInUser = Mapper<User>().map(JSON: json as! [String : Any])
+        
+    }
     //MARK:- IBActions
 
 }

@@ -21,6 +21,12 @@ class SignUpViewController: UIViewController {
     
     //MARK:- Variables
     let db = Firestore.firestore()
+    
+    private lazy var inputValidation: InputValidations = {
+        let inputValidation = InputValidations(presentOn: self)
+        return inputValidation
+    }()
+    
     //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +42,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
-        if InputValidations.checkSignupValidations(name: nameTextField.text ?? "", email: emailTextField.text ?? "", mobileNumber: mobileNumberTextField.text ?? "", password: passwordTextField.text ?? "", presentationController: self) {
+        if inputValidation.checkSignupValidations(name: nameTextField.text ?? "", email: emailTextField.text ?? "", mobileNumber: mobileNumberTextField.text ?? "", password: passwordTextField.text ?? "") {
             signupWebservice()
         }
     }

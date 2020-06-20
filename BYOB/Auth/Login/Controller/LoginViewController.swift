@@ -17,15 +17,17 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var frontView: UIView!
+    private var inputValidation : InputValidations!
+    var socialLoginManager = SocialLoginManager()
     
     //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        inputValidation = InputValidations(presentOn: self)
     }
     
     override func viewDidLayoutSubviews() {
-        self.frontView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        
     }
     
     //MARK:- IBActions
@@ -33,12 +35,19 @@ class LoginViewController: UIViewController {
         CommonUtilities.showHidePasswordCharacters(textField: passwordTextField, button: sender)
     }
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        if InputValidations.checkLoginValidations(email: emailTextField.text!, password: passwordTextField.text!, presentationController: self){
+        if inputValidation.checkLoginValidations(email: emailTextField.text!, password: passwordTextField.text!){
             loginWebService()
         }
     }
     
+    @IBAction func facebookButtonTapped(_ sender: UIButton) {
+        socialLoginManager.delegate = self
+        socialLoginManager.login(loginType: .facebook, controller: self)
+    }
     
+    @IBAction func googleButtonTapped(_ sender: UIButton) {
+        //socialLoginManager.delegate = self
+    }
     
     //MARK:- WebServices Methods
     private func loginWebService(){
@@ -75,5 +84,17 @@ class LoginViewController: UIViewController {
         User.shared.expenseDataBaseSetup = loggedInUser?.expenseDataBaseSetup ?? false
         UserDefaultManager.shared.saveUser(User.shared)
         RootScreenUtility.setRootScreen(window: RootScreenUtility.window(for: self.view))
+    }
+}
+
+//MARK:- Social Login Delegates
+extension LoginViewController: SocialLoginDelegate{
+    func errorInSocialLogin(error: String) {
+        AlertUtility.showAlert(self, title: Constants.AlertTitle.alert, message: error)
+    }
+    
+    
+    func onloginSuccess(result: Any, loginType: SocialLoginType) {
+        
     }
 }

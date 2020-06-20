@@ -10,109 +10,117 @@ import Foundation
 import UIKit
 
 class InputValidations{
-    class func                checkSignupValidations(name:String,email:String,mobileNumber:String,password:String,presentationController:UIViewController)->Bool{
-        if isNameValid(name: name, presentationController: presentationController) && isEmailValid(email: email, presentationController: presentationController) && isMobileNumberValid(mobile: mobileNumber, presentationController: presentationController) && isPasswordValid(password: password, presentationController: presentationController) {
+    //MARK:- Properties
+    private var controller:UIViewController?
+    
+    //MARK:- InitiaLization
+    init(presentOn:UIViewController) {
+        self.controller = presentOn
+    }
+    
+    func                checkSignupValidations(name:String,email:String,mobileNumber:String,password:String)->Bool{
+        if isNameValid(name: name) && isEmailValid(email: email) && isMobileNumberValid(mobile: mobileNumber) && isPasswordValid(password: password) {
             return true
         }
         return false
     }
     
-    class func                checkEditProfileValidations(name:String,lname:String,mobileNumber:String,presentationController:UIViewController)->Bool{
-        if isNameValid(name: name, presentationController: presentationController) && isMobileNumberValid(mobile: mobileNumber, presentationController: presentationController){
+    func                checkEditProfileValidations(name:String,lname:String,mobileNumber:String)->Bool{
+        if isNameValid(name: name) && isMobileNumberValid(mobile: mobileNumber){
             return true
         }
         return false
     }
     
-    class func checkLoginValidations(email:String,password:String,presentationController:UIViewController)->Bool{
-        if isEmailValid(email: email, presentationController:presentationController){
+    func checkLoginValidations(email:String,password:String)->Bool{
+        if isEmailValid(email: email){
             if password != ""{
                 return true
             }else{
-                AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.error, message: Constants.ValidationMessages.enterPassword)
+                AlertUtility.showAlert(self.controller, title: Constants.AlertTitle.error, message: Constants.ValidationMessages.enterPassword)
                 return false
             }
         }
         return false
     }
     
-    class func isNameValid(name:String,presentationController:UIViewController)-> Bool{
+    func isNameValid(name:String)-> Bool{
         if name == ""{
-            AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterName)
+            AlertUtility.showAlert(controller, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterName)
             return false
         }
         return true
     }
     
-    class func isEmailValid(email:String,presentationController:UIViewController)->Bool{
+    func isEmailValid(email:String)->Bool{
         if email == ""{
-            AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterEmail)
+            AlertUtility.showAlert(self.controller, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterEmail)
             return false
         }else{
             if FormValidation.checkValidEmail(email){
                 return true
             }else{
-                AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterValidEmail)
+                AlertUtility.showAlert(self.controller, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterValidEmail)
                 return false
             }
         }
         
     }
     
-    class func isMobileNumberValid(mobile:String,presentationController:UIViewController)->Bool{
+    func isMobileNumberValid(mobile:String)->Bool{
         if mobile == ""{
-            AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterPhoneNumber)
+            AlertUtility.showAlert(self.controller, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterPhoneNumber)
             return false
         }else if mobile.count < Constants.InputLengthConstraints.Minimum.phoneNumber{
-            AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterValidPhone)
+            AlertUtility.showAlert(self.controller, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterValidPhone)
             return false
         }else{
             return true
         }
     }
     
-    class func isPasswordValid(password:String,presentationController:UIViewController)->Bool{
+    func isPasswordValid(password:String)->Bool{
         if password == ""{
-            AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterPassword)
+            AlertUtility.showAlert(self.controller, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterPassword)
             return false
         }else if password.count < Constants.InputLengthConstraints.Minimum.password{
-            AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationRules.passwordRequirements)
+            AlertUtility.showAlert(self.controller, title: Constants.AlertTitle.alert, message: Constants.ValidationRules.passwordRequirements)
             return false
         }
         return true
     }
     
     //MARK:- Expense Attributes Validations
-    class func isTitleValid(title:String,presentationController:UIViewController) -> Bool{
+    func isTitleValid(title:String) -> Bool{
         if title == ""{
-            AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterTitle)
+            AlertUtility.showAlert(self.controller, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterTitle)
             return false
         }
         return true
     }
     
-    class func isAmountValid(amount:String,presentationController:UIViewController) -> Bool{
+    func isAmountValid(amount:String) -> Bool{
         if amount == ""{
-            AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterAmount)
+            AlertUtility.showAlert(self.controller, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterAmount)
             return false
         }else if amount == "0"{
-            AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterValidAmount)
+            AlertUtility.showAlert(self.controller, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterValidAmount)
             return false
         }
         return true
     }
     
-    class func isCategoryValid(category:Category?,presentationController:UIViewController)->Bool{
+    func isCategoryValid(category:Category?)->Bool{
         if category == nil{
-            AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterCategory)
+            AlertUtility.showAlert(self.controller, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterCategory)
             return false
         }
         return true
     }
     
-    class func isDateTimeValid(dateTime:String,presentationController:UIViewController)->Bool{
+    func isDateTimeValid(dateTime:String)->Bool{
         if dateTime == ""{
-            AlertUtility.showAlert(presentationController, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterDateTime)
+            AlertUtility.showAlert(self.controller, title: Constants.AlertTitle.alert, message: Constants.ValidationMessages.enterDateTime)
             return false
         }
         return true

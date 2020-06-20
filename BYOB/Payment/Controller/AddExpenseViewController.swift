@@ -18,13 +18,16 @@ class AddExpenseViewController: UIViewController {
     @IBOutlet var datePicker: UIDatePicker!
     
     //MARK:- Variables
-    private var newExpense:Expense?
+    private var newExpense = Expense()
     let db = Firestore.firestore()
     private var selectedCategory:Category?
     private var selectedIndex:Int = 0
+    private var inputValidation : InputValidations!
+    
     //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        inputValidation = InputValidations(presentOn: self)
         dateTextField.inputView = datePicker
         categoryCollectionView.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell")
         categoryCollectionView.selectItem(at: IndexPath(item: selectedIndex, section: 0), animated: false, scrollPosition: .centeredVertically)
@@ -51,7 +54,7 @@ class AddExpenseViewController: UIViewController {
     
     //MARK:- Private Functions
     private func setExpencesDataBase(userId:String){
-        self.db.collection("expenses").document(userId).setData(["expense":[newExpense!]], completion: { (error) in
+        self.db.collection("expenses").document(userId).setData(["expense":[newExpense]], completion: { (error) in
             if let _error = error{
                 AlertUtility.showAlert(self, title: Constants.AlertTitle.error, message: _error.localizedDescription)
             }else{
@@ -64,16 +67,16 @@ class AddExpenseViewController: UIViewController {
         let expenseRef = db.collection("expenses").document(userID)
 
         expenseRef.updateData([
-            "expense": FieldValue.arrayUnion([newExpense!])
+            "expense": FieldValue.arrayUnion([newExpense])
         ])
         completion()
     }
     
     //MARK:- Validation Methods
     private func checkInputValidations() -> Bool {
-        if InputValidations.isTitleValid(title: titleTextField.text!, presentationController: self) &&
-            InputValidations.isAmountValid(amount: amountTextField.text ?? "", presentationController: self) &&
-            InputValidations.isCategoryValid(category: selectedCategory, presentationController: self){
+        if inputValidation.isTitleValid(title: titleTextField.text!) &&
+            inputValidation.isAmountValid(amount: amountTextField.text ?? "") &&
+            inputValidation.isCategoryValid(category: selectedCategory){
             return true
         }
         return false
@@ -104,6 +107,7 @@ extension AddExpenseViewController:UICollectionViewDelegate,UICollectionViewData
             User.categoriesAvailable[indexPath.row].isSelected = true
             selectedCategory = User.categoriesAvailable[indexPath.row]
             selectedIndex = indexPath.row
+            newExpense.category = selectedCategory
             collectionView.reloadData()
         }
         
@@ -114,8 +118,13 @@ extension AddExpenseViewController:UICollectionViewDelegate,UICollectionViewData
 //MARK:- TextField Delegates
 extension AddExpenseViewController:UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField == dateTextField {
+        if textField == titleTextField{
+            newExpense.name = textField.text!
+        }else if textField == amountTextField{
+            newExpense.amount = Int(textField.text!) ?? 0
+        }else if textField == dateTextField {
             textField.text = "\(datePicker.date)"
+            newExpense.date = textField.text!
         }
     }
 }

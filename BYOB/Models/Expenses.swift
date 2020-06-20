@@ -18,12 +18,8 @@ class Expense: NSObject, Mappable {
     var date       : String?
     required init?(map: Map) {}
     
-    init(name:String,category:Category,amount:Int,date:String) {
-        self.name = name
-        self.category = category
-        self.amount = amount
-        self.date = date
-    }
+    override init() {}
+    
     
     func mapping(map: Map) {
         name      <- map["name"]
