@@ -23,11 +23,12 @@
             <objects>
                 <viewController id="Bxa-HZ-Hig" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WQP-mT-ONL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="AfY-rP-iAD"/>
                     </view>
+                    <navigationItem key="navigationItem" id="3Fs-2r-vGg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGH-Co-0Dd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,7 +148,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="Bxa-HZ-Hig" kind="showDetail" id="ipk-OL-vrU"/>
+                                                    <segue destination="Bxa-HZ-Hig" kind="show" id="ipk-OL-vrU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIw-bx-jaU">
